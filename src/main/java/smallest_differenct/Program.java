@@ -13,6 +13,7 @@ public class Program {
         int minimum_diff_value_arrayTwo = arrayTwo[0];
         Arrays.sort(arrayTwo);
         // {15, 17, 26, 134, 135};
+        outerLopp:
         for (int i = 0; i < arrayOne.length; i++) {
             for (int j = 0; j < arrayTwo.length; j++) {
                 int temp = Math.abs(arrayOne[i] - arrayTwo[j]);
@@ -20,6 +21,8 @@ public class Program {
                     minimum_diff = temp;
                     minimum_diff_value_arrayOne = arrayOne[i];
                     minimum_diff_value_arrayTwo = arrayTwo[j];
+                } else {
+                    break outerLopp;
                 }
             }
 
