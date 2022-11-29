@@ -20,15 +20,13 @@ public class Program {
                     minimum_diff = temp;
                     minimum_diff_value_arrayOne = arrayOne[i];
                     minimum_diff_value_arrayTwo = arrayTwo[j];
-                } else {
-                    break;
                 }
             }
 
         }
 
         int[] result = {minimum_diff_value_arrayOne, minimum_diff_value_arrayTwo};
-
+        System.out.println(Arrays.toString(result));
         return result;
     }
 }
