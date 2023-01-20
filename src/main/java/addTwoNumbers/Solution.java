@@ -39,7 +39,7 @@ public class Solution {
 
     private int getItem(List list1, int s1, int i) {
         int i1;
-        if (i > s1 - 1) {
+        if (i >= s1) {
             i1 = 0;
         } else {
             i1 = (int) list1.get(i);
