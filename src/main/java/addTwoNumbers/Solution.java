@@ -13,7 +13,7 @@ public class Solution {
         // 4 + 6 if sum >=10 0 , 1 going to next
         // 3 + 4 + 1(from previous iteration) 8
         int s1 = list1.size();
-        int s2 = list1.size();
+        int s2 = list2.size();
         int size = s1;
         if (s2 > s1) {
             size = s2;
@@ -33,6 +33,9 @@ public class Solution {
 
             result.add(sum);
             System.out.println("sum and carry: " + sum + " and " + carry);
+        }
+        if (carry > 0) {
+            result.add(carry);
         }
         return result;
     }
