@@ -12,12 +12,22 @@ public class Solution {
         // 2 + 5 if sum >=10 7
         // 4 + 6 if sum >=10 0 , 1 going to next
         // 3 + 4 + 1(from previous iteration) 8
-
-        for (int i = 0, j = 0; i < list1.size() || j < list2.size(); i++, j++) {
-            int sum = (int)list1.get(i) + (int)list2.get(j);
-
-
+        int s1 = list1.size();
+        int s2 = list1.size();
+        int size  = s1;
+        if (s2>s1) {
+            size = s2;
         }
-        return null;
+        int carry = 0;
+        //for (int i = 0, j = 0; i < list1.size() || j < list2.size(); i++, j++) {
+        for (int i = 0; i<size; i++) {
+            int tempSum = (int)list1.get(i) + (int)list2.get(i) + carry;
+            // tempSum = 16
+            int sum = tempSum%10;
+            carry = tempSum/10;
+            result.add(sum);
+            System.out.println("sum and carry: "+sum+" and "+carry);
+        }
+        return result;
     }
 }
