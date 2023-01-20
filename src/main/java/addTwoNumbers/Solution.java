@@ -14,19 +14,22 @@ public class Solution {
         // 3 + 4 + 1(from previous iteration) 8
         int s1 = list1.size();
         int s2 = list1.size();
-        int size  = s1;
-        if (s2>s1) {
+        int size = s1;
+        if (s2 > s1) {
             size = s2;
         }
         int carry = 0;
+
         //for (int i = 0, j = 0; i < list1.size() || j < list2.size(); i++, j++) {
-        for (int i = 0; i<size; i++) {
-            int tempSum = (int)list1.get(i) + (int)list2.get(i) + carry;
+        for (int i = 0; i < size; i++) {
+
+            int tempSum = (int) list1.get(i) + (int) list2.get(i) + carry;
             // tempSum = 16
-            int sum = tempSum%10;
-            carry = tempSum/10;
+            int sum = tempSum % 10;
+            carry = tempSum / 10;
+
             result.add(sum);
-            System.out.println("sum and carry: "+sum+" and "+carry);
+            System.out.println("sum and carry: " + sum + " and " + carry);
         }
         return result;
     }
