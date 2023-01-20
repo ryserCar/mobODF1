@@ -5,7 +5,7 @@ import java.util.List;
 
 public class Solution {
     public List addTwoNumbers(List list1, List list2) {
-        List<Integer> result = new LinkedList<Integer>();
+        List<Integer> result = new LinkedList<>();
 
         // 2 4 3
         // 5 6 4
@@ -22,8 +22,11 @@ public class Solution {
 
         //for (int i = 0, j = 0; i < list1.size() || j < list2.size(); i++, j++) {
         for (int i = 0; i < size; i++) {
+            int i1, i2;
+            i1 = getItem(list1, s1, i);
+            i2 = getItem(list2, s2, i);
 
-            int tempSum = (int) list1.get(i) + (int) list2.get(i) + carry;
+            int tempSum = i1 + i2 + carry;
             // tempSum = 16
             int sum = tempSum % 10;
             carry = tempSum / 10;
@@ -32,5 +35,15 @@ public class Solution {
             System.out.println("sum and carry: " + sum + " and " + carry);
         }
         return result;
+    }
+
+    private int getItem(List list1, int s1, int i) {
+        int i1;
+        if (i > s1 - 1) {
+            i1 = 0;
+        } else {
+            i1 = (int) list1.get(i);
+        }
+        return i1;
     }
 }
