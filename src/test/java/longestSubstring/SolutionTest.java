@@ -15,4 +15,25 @@ class SolutionTest {
         assertEquals(expected, underTest.lengthOfLongestSubstring(s));
     }
 
+    @Test
+    void shouldReturnOne() {
+        String s = "bbbbb";
+        int expected = 1;
+        assertEquals(expected, underTest.lengthOfLongestSubstring(s));
+    }
+
+    @Test
+    void shouldReturnThree2() {
+        String s = "pwwkew";
+        int expected = 3;
+        assertEquals(expected, underTest.lengthOfLongestSubstring(s));
+    }
+
+    @Test
+    void shouldReturnFive() {
+        String s = "anviaj";
+        int expected = 5;
+        assertEquals(expected, underTest.lengthOfLongestSubstring(s));
+    }
+
 }
