@@ -11,7 +11,7 @@ public class Solution {
         for (int i = 0; i < size; i++) {
             for (int j = i; j < size; j++){
                 if (isLongestSubStringWithoutRepeatingCharacter(s, i, j)) {
-                     // increase the count;
+                     result = Math.max(result, j-i+1);
                 }
             }
 
@@ -23,7 +23,7 @@ public class Solution {
 
     private boolean isLongestSubStringWithoutRepeatingCharacter(String str, int start, int end){
         Set<Character> mySet = new HashSet<>();
-        for (int k = 0; k <= end; k++){
+        for (int k = start; k <= end; k++){
             Character c = str.charAt(k);
             if (mySet.contains(c)) {
                 return false;
@@ -38,6 +38,6 @@ public class Solution {
         // if charSet.get(character) ;
         // if not presented we add to charSet and increase count
         // if presented we clean charSet, set result equals to count if count > result. result = 3 if counter > result.
-        return false;
+        //return false;
     }
 }
