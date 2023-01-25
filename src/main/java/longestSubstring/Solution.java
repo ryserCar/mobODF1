@@ -9,11 +9,12 @@ public class Solution {
         int result = 0;
         int count = 0;
         int size = s.length();
-        Set<Character> mySet = new HashSet<>();
-        //abcabcde
+
+        //anviaj
         for (int i = 0; i < size; i++) {
-            //b
+            Set<Character> mySet = new HashSet<>();
             for (int j = i; j < size; j++) {
+
                 //a
                 if (mySet.contains(s.charAt(j))) {
                     result = Math.max(result, count);
