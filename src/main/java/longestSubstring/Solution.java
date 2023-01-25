@@ -7,11 +7,20 @@ public class Solution {
 
     public int lengthOfLongestSubstring(String s) {
         int result = 0;
+        int count = 0;
         int size = s.length();
+        Set<Character> mySet = new HashSet<>();
+        //abcabcde
         for (int i = 0; i < size; i++) {
-            for (int j = i; j < size; j++){
-                if (isLongestSubStringWithoutRepeatingCharacter(s, i, j)) {
-                     result = Math.max(result, j-i+1);
+            //b
+            mySet.add(s.charAt(i));
+            for (int j = i; j < size; j++) {
+                //a
+                if (mySet.contains(s.charAt(j))) {
+                    result = 0;
+                    break;
+                } else {
+                    result++;
                 }
             }
 
@@ -21,9 +30,25 @@ public class Solution {
         return 0;
     }
 
-    private boolean isLongestSubStringWithoutRepeatingCharacter(String str, int start, int end){
+//    public int lengthOfLongestSubstring(String s) {
+//        int result = 0;
+//        int size = s.length();
+//        for (int i = 0; i < size; i++) {
+//            for (int j = i; j < size; j++){
+//                if (isLongestSubStringWithoutRepeatingCharacter(s, i, j)) {
+//                     result = Math.max(result, j-i+1);
+//                }
+//            }
+//
+//
+//        }
+//
+//        return 0;
+//    }
+
+    private boolean isLongestSubStringWithoutRepeatingCharacter(String str, int start, int end) {
         Set<Character> mySet = new HashSet<>();
-        for (int k = start; k <= end; k++){
+        for (int k = start; k <= end; k++) {
             Character c = str.charAt(k);
             if (mySet.contains(c)) {
                 return false;
