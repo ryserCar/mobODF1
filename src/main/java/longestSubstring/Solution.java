@@ -13,21 +13,22 @@ public class Solution {
         //abcabcde
         for (int i = 0; i < size; i++) {
             //b
-            mySet.add(s.charAt(i));
             for (int j = i; j < size; j++) {
                 //a
                 if (mySet.contains(s.charAt(j))) {
-                    result = 0;
+                    result = Math.max(result, count);
+                    mySet.clear();
                     break;
                 } else {
-                    result++;
+                    mySet.add(s.charAt(i));
+                    count++;
                 }
             }
-
+            count = 0;
 
         }
 
-        return 0;
+        return result;
     }
 
 //    public int lengthOfLongestSubstring(String s) {
