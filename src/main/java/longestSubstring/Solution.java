@@ -9,24 +9,20 @@ public class Solution {
         int result = 0;
         int count = 0;
         int size = s.length();
-
-        //anviaj
+        Set<Character> mySet = new HashSet<>();
+        //abcabcde
         for (int i = 0; i < size; i++) {
-            Set<Character> mySet = new HashSet<>();
             for (int j = i; j < size; j++) {
-
-                //a
                 if (mySet.contains(s.charAt(j))) {
-                    result = Math.max(result, count);
-                    mySet.clear();
                     break;
                 } else {
-                    mySet.add(s.charAt(i));
+                    mySet.add(s.charAt(j));
                     count++;
                 }
             }
+            result = Math.max(result, count);
+            mySet.clear();
             count = 0;
-
         }
 
         return result;

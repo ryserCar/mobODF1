@@ -6,7 +6,5 @@
       <sourceFolder url="file://$MODULE_DIR$/src/test" isTestSource="true" />
       <excludeFolder url="file://$MODULE_DIR$/target" />
     </content>
-    <orderEntry type="jdk" jdkName="liberica-11" jdkType="JavaSDK" />
-    <orderEntry type="sourceFolder" forTests="false" />
   </component>
 </module>
